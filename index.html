@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Messenger-style Copilot Chat</title>
+  <title>학교 AI 학습·업무 도우미</title>
   <style>
     :root {
       --bg: #eceff3;
@@ -95,23 +95,6 @@
       text-overflow: ellipsis;
     }
 
-    .top-icons {
-      display: flex;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .icon-btn {
-      width: 30px;
-      height: 30px;
-      border: 1px solid rgba(0, 0, 0, 0.12);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.55);
-      font-size: 14px;
-      line-height: 1;
-      cursor: pointer;
-    }
-
     main {
       flex: 1;
       overflow: auto;
@@ -173,45 +156,9 @@
       background: #fff;
     }
 
-    .composer {
-      padding: 10px 12px 14px;
-      background: #fff;
-      border-top: 1px solid #e0e5ef;
-    }
-
-    .composer form {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .composer input {
-      flex: 1;
-      border: 1px solid #d4dce7;
-      border-radius: 22px;
-      padding: 10px 14px;
-      font-size: 14px;
-      background: #fbfcff;
-      color: var(--text);
-    }
-
-    .composer button {
-      border: 0;
-      border-radius: 18px;
-      padding: 10px 13px;
-      background: #2f3a4f;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .composer-help {
-      margin: 8px 2px 0;
-      font-size: 11px;
-      color: #5f6d86;
-    }
-
+    .help { padding: 12px 16px; background: #fff; border-top: 1px solid #e0e5ef; font-size: 12px; line-height: 1.6; }
+    .help p { margin: 0 0 6px; }
+    a { color: #164da3; }
     :focus-visible {
       outline: 3px solid var(--focus);
       outline-offset: 2px;
@@ -235,66 +182,35 @@
   </style>
 </head>
 <body>
-  <section class="app" aria-label="KakaoTalk-inspired messenger layout">
+  <section class="app" aria-label="학교 AI 학습·업무 도우미">
     <header class="topbar">
-      <div class="status" aria-label="Status bar">
-        <span>19:04</span>
-        <span aria-hidden="true">📶 🔋</span>
-      </div>
       <div class="title-row">
         <div class="profile">
           <span class="avatar" aria-hidden="true">🤖</span>
-          <h1 class="chat-title">AI Assistant Chat</h1>
-        </div>
-        <div class="top-icons" aria-label="Messenger actions">
-          <button class="icon-btn" type="button" aria-label="Search chat">🔍</button>
-          <button class="icon-btn" type="button" aria-label="Open menu">☰</button>
+          <h1 class="chat-title">학교 AI 학습·업무 도우미</h1>
         </div>
       </div>
     </header>
 
-    <main aria-label="Conversation and bot panel">
-      <p class="notice">KakaoTalk-inspired style demo (not an official KakaoTalk UI).</p>
-      <p class="bubble other">Hi! Use the embedded panel below to chat with the Copilot Studio bot.</p>
-      <p class="bubble me">Great, opening the bot now ✨</p>
+    <main aria-label="AI 대화 영역">
+      <p class="notice">Copilot Studio 기반 교육용 AI 에이전트</p>
+      <p class="bubble other">안녕하세요! 아래 채팅창에서 질문을 입력해 주세요. 답변은 중요한 내용일수록 원문과 함께 확인해 주세요.</p>
+      <p class="notice">이름·연락처·성적·비밀번호 등 개인정보와 비공개 자료를 입력하지 마세요.</p>
       <section class="engine-panel" aria-label="Copilot Studio chat engine">
         <p class="engine-label">Copilot Studio Web Chat</p>
         <iframe
-          title="Copilot Studio chat"
+          title="학교 AI 도우미 채팅창"
           src="https://copilotstudio.microsoft.com/environments/Default-b191802e-6d1f-456c-af2d-ebd2ab881e8e/bots/nara_multimodelaiagent_vb2GGk/webchat?__version__=2&enableFileAttachment=false&cliAgent=true">
         </iframe>
       </section>
     </main>
 
-    <footer class="composer">
-      <form action="#" aria-label="Message composer (visual only)">
-        <label for="message-input" class="sr-only">Type a message</label>
-        <input id="message-input" name="message" type="text" placeholder="Type a message…">
-        <button type="submit">Send</button>
-      </form>
-      <p class="composer-help">Tip: Send messages in the embedded Copilot Studio chat panel above.</p>
+    <footer class="help">
+      <p>질문은 위 채팅창 안에 입력하세요. 파일 첨부 지원은 확인 중입니다.</p>
+      <p>채팅창이 표시되지 않으면 <a href="https://copilotstudio.microsoft.com/environments/Default-b191802e-6d1f-456c-af2d-ebd2ab881e8e/bots/nara_multimodelaiagent_vb2GGk/webchat?__version__=2&amp;enableFileAttachment=false&amp;cliAgent=true" target="_blank" rel="noopener noreferrer">채팅을 새 창에서 열기</a>를 이용하세요. 계정·권한에 따라 로그인이 필요할 수 있습니다.</p>
+      <a href="https://github.com/sinnarasam/ai#readme" target="_blank" rel="noopener noreferrer">사용 안내·테스트 기록</a>
     </footer>
   </section>
-
-  <style>
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-  </style>
-
-  <script>
-    document.querySelector(".composer form").addEventListener("submit", function (event) {
-      event.preventDefault();
-      document.getElementById("message-input").value = "";
-    });
-  </script>
 </body>
 </html>
+
