@@ -2,7 +2,7 @@
 
 Copilot Studio 에이전트를 웹페이지에서 이용할 수 있도록 연결한 교육용 프로젝트입니다. 글쓰기, 요약, 문제 해결 등 학교에서 활용할 수 있는 AI 대화를 목표로 합니다.
 
-- [실행 사이트](https://sinnarasam.github.io/ai/)
+- [실행 사이트](https://sinnarasam.github.io/school-ai-agent/)
 - [웹 화면 코드](index.html)
 - [테스트 절차](docs/TESTING.md)
 - [질문 30개 및 결과 기록표](tests/test-cases.csv)
